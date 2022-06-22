@@ -1,0 +1,56 @@
+﻿<Window x:Class="ScadaGUI.NewAO"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScadaGUI"
+        mc:Ignorable="d"
+        Title="New Analog Output" Height="450" Width="320">
+    <Grid>
+        <!--#region  Definisanje grida-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#89CFF0"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Name="Zaglavlje" Text="AO INFO" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="AO name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Description" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Address" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Units" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Initial Value" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10" Height="40" Width="140"  Click="cancel_Click">Cancel</Button >
+
+        <!--#region Druga kolona-->
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="AONameTxt" Margin="15" ToolTip="Enter AO name" />
+        <TextBlock Name="AOVal" Text="*Required field" Grid.Row="1" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Name="DescriptionTxt" Margin="15" ToolTip="Enter description" />
+        <TextBlock Name="DescriptionVal" Text="*Required field" Grid.Row="2" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Name="AddressTxt" Margin="15" ToolTip="Enter address" />
+        <TextBlock Name="AddressVal" Text="*Required field" Grid.Row="3" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Name="UnitsTxt" Margin="15" ToolTip="Enter units" />
+        <TextBlock Name="UnitsVal" Text="*Required field" Grid.Row="4" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Name="InitialValueTxt" Margin="15" ToolTip="Enter scan time" />
+        <TextBlock Name="InitialValueVal" Text="*Required field" Grid.Row="5" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 10, 10" Height="40" Width="140" Click="confirm_Click">Confirm</Button >
+
+
+        <!--#endregion-->
+
+    </Grid>
+</Window>
