@@ -15,16 +15,14 @@ using System.Windows.Shapes;
 namespace ScadaGUI
 {
     /// <summary>
-    /// Interaction logic for NewAI.xaml
+    /// Interaction logic for NewDI.xaml
     /// </summary>
-    public partial class NewAI : Window
+    public partial class NewDI : Window
     {
-        
-        public NewAI()
+        public NewDI()
         {
             InitializeComponent();
         }
-
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -42,17 +40,17 @@ namespace ScadaGUI
         {
             bool retVal = true;
 
-            //validacija polja AI name
-            if (String.IsNullOrWhiteSpace(AINameTxt.Text))
+            //validacija polja DI name
+            if (String.IsNullOrWhiteSpace(DINameTxt.Text))
             {
-                AINameTxt.BorderBrush = Brushes.Red;
-                AIVal.Visibility = Visibility.Visible;
+                DINameTxt.BorderBrush = Brushes.Red;
+                DIVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
             {
-                AINameTxt.ClearValue(Border.BorderBrushProperty);
-                AIVal.Visibility = Visibility.Hidden;
+                DINameTxt.ClearValue(Border.BorderBrushProperty);
+                DIVal.Visibility = Visibility.Hidden;
             }
 
             //validacija polja Description
@@ -79,19 +77,6 @@ namespace ScadaGUI
             {
                 AddressTxt.ClearValue(Border.BorderBrushProperty);
                 AddressVal.Visibility = Visibility.Hidden;
-            }
-
-            //validacija polja Units
-            if (String.IsNullOrWhiteSpace(UnitsTxt.Text))
-            {
-                UnitsTxt.BorderBrush = Brushes.Red;
-                UnitsVal.Visibility = Visibility.Visible;
-                retVal = false;
-            }
-            else
-            {
-                UnitsTxt.ClearValue(Border.BorderBrushProperty);
-                UnitsVal.Visibility = Visibility.Hidden;
             }
 
             //validacija polja Scan Time
@@ -131,5 +116,7 @@ namespace ScadaGUI
 
             return retVal;
         }
+
+
     }
 }
