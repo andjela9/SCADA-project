@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewDO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewAI.xaml.cs">
@@ -89,6 +93,9 @@
     </Compile>
     <Compile Include="NewDI.xaml.cs">
       <DependentUpon>NewDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewDO.xaml.cs">
+      <DependentUpon>NewDO.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

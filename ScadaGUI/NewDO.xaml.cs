@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ScadaGUI
 {
     /// <summary>
-    /// Interaction logic for NewAO.xaml
+    /// Interaction logic for NewDO.xaml
     /// </summary>
-    public partial class NewAO : Window
+    public partial class NewDO : Window
     {
-        public NewAO()
+        public NewDO()
         {
             InitializeComponent();
         }
@@ -31,27 +31,24 @@ namespace ScadaGUI
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidateInput())
-            {
-                //TODO
-            }
+
         }
 
         private bool ValidateInput()
         {
             bool retVal = true;
 
-            //validacija polja AI name
-            if (String.IsNullOrWhiteSpace(AONameTxt.Text))
+            //validacija polja DI name
+            if (String.IsNullOrWhiteSpace(DONameTxt.Text))
             {
-                AONameTxt.BorderBrush = Brushes.Red;
-                AOVal.Visibility = Visibility.Visible;
+                DONameTxt.BorderBrush = Brushes.Red;
+                DOVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
             {
-                AONameTxt.ClearValue(Border.BorderBrushProperty);
-                AOVal.Visibility = Visibility.Hidden;
+                DONameTxt.ClearValue(Border.BorderBrushProperty);
+                DOVal.Visibility = Visibility.Hidden;
             }
 
             //validacija polja Description
@@ -80,35 +77,22 @@ namespace ScadaGUI
                 AddressVal.Visibility = Visibility.Hidden;
             }
 
-            //validacija polja Units
-            if (String.IsNullOrWhiteSpace(UnitsTxt.Text))
-            {
-                UnitsTxt.BorderBrush = Brushes.Red;
-                UnitsVal.Visibility = Visibility.Visible;
-                retVal = false;
-            }
-            else
-            {
-                UnitsTxt.ClearValue(Border.BorderBrushProperty);
-                UnitsVal.Visibility = Visibility.Hidden;
-            }
-
             //validacija polja Initial Value
             if (String.IsNullOrWhiteSpace(InitialValueTxt.Text))
             {
                 InitialValueVal.Visibility = Visibility.Visible;
-                InitialValueVal.Text = "Scan time must be an integer";
+                InitialValueVal.Text = "Initial value must be 0 or 1";
                 retVal = false;
             }
             else
             {
-                double initialValue;
-                if (Double.TryParse(InitialValueTxt.Text, out initialValue))
+                int initialValue;
+                if (Int32.TryParse(InitialValueTxt.Text, out initialValue))
                 {
-                    if (initialValue <= 0)
+                    if (initialValue != 0 && initialValue!= 1)
                     {
                         InitialValueTxt.BorderBrush = Brushes.Red;
-                        InitialValueVal.Text = "Initial Value must be a positive number";               //da li mora?
+                        InitialValueVal.Text = "Initial value must be 0 or 1";
                         InitialValueVal.Visibility = Visibility.Visible;
                         retVal = false;
                     }
@@ -122,12 +106,14 @@ namespace ScadaGUI
                 {
                     InitialValueTxt.BorderBrush = Brushes.Red;
                     InitialValueVal.Visibility = Visibility.Visible;
-                    InitialValueVal.Text = "Initial Value must be a positive number";
+                    InitialValueVal.Text = "Initial value must be 0 or 1";
                     retVal = false;
                 }
             }
 
+
             return retVal;
         }
+
     }
 }
