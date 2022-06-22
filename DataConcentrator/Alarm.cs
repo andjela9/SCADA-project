@@ -106,5 +106,30 @@ namespace DataConcentrator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
+        public bool AlarmOn(double currValue)
+        {
+            if (this.belowOrAbove == AlarmBelowOrAbove.BELOW)
+            {
+                if (this.limitValue > currValue)
+                {
+                    return true;            //alarm se aktivira ako vrednost padne ispod limita
+                }
+                else return false;          //ako ne padne nikom nista
+            }else if(this.belowOrAbove == AlarmBelowOrAbove.ABOVE)
+            {
+                if (this.limitValue < currValue)
+                {
+                    return true;           //alarm se aktivira ako vrednost predje preko limita
+                }
+                else return false;          //vrednost nije presla preko limita
+            }
+            else
+            {
+                return false;               //ne postoji alarm uopste
+            }
+        }
+
+        //neki ispis, mozda preko xaml a mozda i ovde bude potrebno
+
     }
 }
