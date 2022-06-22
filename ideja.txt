@@ -1,1 +1,0 @@
-slika skade, s leve strane strelice i iznad nazivi tagova, levo od toga: ako postoji vrednost onda ta vrednost, ako ne onda adresa zadivljena. Desno od slike ista stvar, samo sa izlazima
