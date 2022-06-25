@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="new AI test" HorizontalAlignment="Left" Margin="194,76,0,0" VerticalAlignment="Top" Width="75" Name="newAI" Click="newAI_Click"/>
+        <Button Content="new AO test" HorizontalAlignment="Left" Margin="70,76,0,0" VerticalAlignment="Top" Width="75" Name="newAO" Click="newAO_Click"/>
+        <Button Content="new DI test" HorizontalAlignment="Left" Margin="311,76,0,0" VerticalAlignment="Top" Width="75" Name="newDI" Click="newDI_Click" />
+        <Button Content="new DO test" HorizontalAlignment="Left" Margin="440,76,0,0" VerticalAlignment="Top" Width="75" Name="newDO" Click="newDO_Click"/>
+
+
     </Grid>
 </Window>

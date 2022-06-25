@@ -24,5 +24,36 @@ namespace ScadaGUI
         {
             InitializeComponent();
         }
+
+        private void newAI_Click(object sender, RoutedEventArgs e)
+        {
+            NewAI newAI = new NewAI();
+            newAI.ShowDialog();
+        }
+
+        private void newAO_Click(object sender, RoutedEventArgs e)
+        {
+            NewAO newAO = new NewAO();
+            newAO.ShowDialog();
+        }
+
+        private void newDI_Click(object sender, RoutedEventArgs e)
+        {
+            NewDI newDI = new NewDI();
+            newDI.ShowDialog();
+        }
+
+        private void newDO_Click(object sender, RoutedEventArgs e)
+        {
+            NewDO newDO = new NewDO();
+            newDO.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
     }
 }

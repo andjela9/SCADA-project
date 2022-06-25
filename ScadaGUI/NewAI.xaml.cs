@@ -77,6 +77,7 @@ namespace ScadaGUI
             }
             else
             {
+                //TODO: proveriti da li je adresa dozvoljena
                 AddressTxt.ClearValue(Border.BorderBrushProperty);
                 AddressVal.Visibility = Visibility.Hidden;
             }
