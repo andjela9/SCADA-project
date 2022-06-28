@@ -19,6 +19,8 @@ namespace ScadaGUI
     /// </summary>
     public partial class NewAI : Window
     {
+        //public AI newAI;
+
         
         public NewAI()
         {
@@ -36,6 +38,30 @@ namespace ScadaGUI
             {
                 //TODO
             }
+        }
+
+        private void confirm_MouseEnter(object sender, MouseEventArgs e)
+        {
+            confirm.Background = new SolidColorBrush(Colors.LightGreen);
+            confirm.Foreground = new SolidColorBrush(Colors.LimeGreen);
+        }
+
+        private void confirm_MouseLeave(object sender, MouseEventArgs e)
+        {
+            confirm.Background = new SolidColorBrush(Colors.LawnGreen);
+            confirm.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+        private void cancel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cancel.Background = new SolidColorBrush(Colors.Red);
+            cancel.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void cancel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cancel.Background = new SolidColorBrush(Colors.OrangeRed);
+            cancel.Foreground = new SolidColorBrush(Colors.Black);
         }
 
         private bool ValidateInput()

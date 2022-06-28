@@ -29,7 +29,7 @@
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Address" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Units" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Initial Value" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10" Height="40" Width="140"  Click="cancel_Click">Cancel</Button >
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="cancel" BorderBrush="OrangeRed"  Background="OrangeRed" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10" Height="40" Width="140" MouseEnter="cancel_MouseEnter" MouseLeave="cancel_MouseLeave" Click="cancel_Click">Cancel</Button >
 
         <!--#region Druga kolona-->
         <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="AONameTxt" Margin="15" ToolTip="Enter AO name" />
@@ -47,7 +47,7 @@
         <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Name="InitialValueTxt" Margin="15" ToolTip="Enter scan time" />
         <TextBlock Name="InitialValueVal" Text="*Required field" Grid.Row="5" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
 
-        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="confirm" BorderBrush="#7CFC00"  Background="#7CFC00" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 10, 10" Height="40" Width="140" Click="confirm_Click">Confirm</Button >
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="confirm" BorderBrush="LawnGreen"  Background="LawnGreen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 10, 10" Height="40" Width="140" MouseEnter="confirm_MouseEnter" MouseLeave="confirm_MouseLeave" Click="confirm_Click">Confirm</Button >
 
 
         <!--#endregion-->
