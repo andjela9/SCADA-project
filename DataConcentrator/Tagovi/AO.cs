@@ -18,6 +18,7 @@ namespace DataConcentrator.Tagovi
         private double initialValue;
         private double currentValue;
         private string units;
+        //nema liste alarma
         //sigurno nema prikacen alarm
 
         public AO(string tagName, string description, string address, double currentValue, string unit)

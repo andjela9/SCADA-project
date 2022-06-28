@@ -16,6 +16,7 @@ namespace DataConcentrator.Tagovi
         private string address;
         private int scanTime;
         private double currentValue;
+        //nema alarme
 
         public DI(string tagName, string description, string address, int scanTime, double currentValue)
         {

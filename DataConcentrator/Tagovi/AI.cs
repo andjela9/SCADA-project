@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace DataConcentrator.Tagovi
 {
+    public enum AlarmState
+    {
+        None, On, Off
+    }
+
     public class AI : INotifyPropertyChanged
     {
         //TODO: oko baze, kljuc, liste, otom potom
@@ -19,8 +24,9 @@ namespace DataConcentrator.Tagovi
         private int scanTime;
         private double currentValue;
         private string units;
-        //mozda treba ovde neki field da li ima ili nema prikacen alarm
-        //kad napisem alarme onda i lista alarma
+        private AlarmState alarmState;
+        //DONE: mozda treba ovde neki field da li ima ili nema prikacen alarm
+        //DONE: kad napisem alarme onda i lista alarma
 
         public AI(string tagName, string description, string address, int scanTime, double currentValue, string unit)
         {
@@ -37,6 +43,13 @@ namespace DataConcentrator.Tagovi
 
 
         #region Properties
+        //TODO: treba negde da dam kljuc
+
+        public List<Alarm> Alarms { get; set; }
+        
+        public List<Alarm> ActiveAlarms { get; set; }
+
+
         public string TagName
         {
             get { return tagName; }
@@ -44,6 +57,18 @@ namespace DataConcentrator.Tagovi
             {
                 tagName = value;
                 OnPropertyChanged("TagName");
+            }
+        }
+
+        
+
+        public AlarmState AlarmState
+        {
+            get { return alarmState; }
+            set
+            {
+                alarmState = value;
+                OnPropertyChanged("AlarmState");
             }
         }
         public string Description

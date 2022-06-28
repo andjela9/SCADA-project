@@ -10,5 +10,7 @@ namespace DataConcentrator
     public class AlarmContext : DbContext
     {
         public DbSet<Alarm> Alarms { get; set; }
+
+        //mozda moze samo jedna klasa Context pa tu onda svi DbSetovi
     }
 }

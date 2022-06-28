@@ -54,6 +54,7 @@
     <Compile Include="Alarm.cs" />
     <Compile Include="AlarmContext.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Handler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tagovi\AI.cs" />
     <Compile Include="Tagovi\AO.cs" />

@@ -13,6 +13,8 @@ namespace DataConcentrator
         ABOVE
     }
 
+    
+
     public class Alarm : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
