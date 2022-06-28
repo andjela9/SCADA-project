@@ -54,17 +54,22 @@
     <Compile Include="Alarm.cs" />
     <Compile Include="AlarmContext.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Handler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tagovi\AI.cs" />
     <Compile Include="Tagovi\AO.cs" />
     <Compile Include="Tagovi\DI.cs" />
     <Compile Include="Tagovi\DO.cs" />
-    <Compile Include="TagsContext.cs" />
+    <Compile Include="Context.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PLCSimulator\PLCSimulator.csproj">
+      <Project>{DC33BD88-1C29-4D05-8BB6-C41323290719}</Project>
+      <Name>PLCSimulator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

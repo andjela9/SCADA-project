@@ -31,7 +31,10 @@ namespace ScadaGUI
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ValidateInput())
+            {
+                //TODO
+            }
         }
 
         private void confirm_MouseEnter(object sender, MouseEventArgs e)
@@ -104,6 +107,7 @@ namespace ScadaGUI
             //validacija polja Initial Value
             if (String.IsNullOrWhiteSpace(InitialValueTxt.Text))
             {
+                InitialValueTxt.BorderBrush = Brushes.Red;
                 InitialValueVal.Visibility = Visibility.Visible;
                 InitialValueVal.Text = "Initial value must be 0 or 1";
                 retVal = false;

@@ -120,8 +120,9 @@ namespace ScadaGUI
             //validacija polja Initial Value
             if (String.IsNullOrWhiteSpace(InitialValueTxt.Text))
             {
+                InitialValueTxt.BorderBrush = Brushes.Red;
                 InitialValueVal.Visibility = Visibility.Visible;
-                InitialValueVal.Text = "Scan time must be an integer";
+                InitialValueVal.Text = "Initial value must be an integer";
                 retVal = false;
             }
             else

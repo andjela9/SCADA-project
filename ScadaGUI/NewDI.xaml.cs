@@ -106,6 +106,7 @@ namespace ScadaGUI
             //validacija polja Scan Time
             if (String.IsNullOrWhiteSpace(ScanTimeTxt.Text))
             {
+                ScanTimeTxt.BorderBrush = Brushes.Red;
                 ScanTimeVal.Visibility = Visibility.Visible;
                 ScanTimeVal.Text = "Scan time must be an integer";
                 retVal = false;
