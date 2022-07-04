@@ -29,6 +29,18 @@ namespace DataConcentrator.Tagovi
         public DO() { }
 
         #region Properties
+
+        private int num;
+        [Key]
+        public int Num
+        {
+            get { return num; }
+            set
+            {
+                num = value;
+                OnPropertyChanged("Num");
+            }
+        }
         public string TagName
         {
             get { return tagName; }

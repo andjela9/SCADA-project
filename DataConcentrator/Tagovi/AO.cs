@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,22 @@ namespace DataConcentrator.Tagovi
         }
 
         public AO() { }
-        
+
 
         #region Properties
+        private int num;
+        [Key]
+        public int Num
+        {
+            get { return num; }
+            set
+            {
+                num = value;
+                OnPropertyChanged("Num");
+            }
+        }
+
+
         public string TagName
         {
             get { return tagName; }

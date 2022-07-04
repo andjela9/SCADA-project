@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +40,16 @@ namespace DataConcentrator
             dateTime = new DateTime();
         }
 
-        public Alarm() { }
+        public Alarm() {
+            AlarmName = "";
+            Message = "";
+            LimitValue = 0;
+            BelowOrAbove = AlarmBelowOrAbove.BELOW;
+            AlarmID = 0;
+            DateTime = new DateTime();
+
+        
+        }
 
 
         #region Properties
@@ -81,7 +92,7 @@ namespace DataConcentrator
                 OnPropertyChanged("LimitValue");
             }
         }
-
+        [Key]
         public int AlarmID
         {
             get { return alarmID; }
@@ -91,7 +102,7 @@ namespace DataConcentrator
                 OnPropertyChanged("AlarmID");
             }
         }
-
+        [NotMapped]
         public DateTime DateTime
         {
             get { return dateTime; }
