@@ -5,12 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScadaGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="S C A D A" Height="500" Width="800">
     <Grid>
-        <Button Content="new AI test" HorizontalAlignment="Left" Margin="194,76,0,0" VerticalAlignment="Top" Width="75" Name="newAI" Click="newAI_Click"/>
-        <Button Content="new AO test" HorizontalAlignment="Left" Margin="70,76,0,0" VerticalAlignment="Top" Width="75" Name="newAO" Click="newAO_Click"/>
-        <Button Content="new DI test" HorizontalAlignment="Left" Margin="311,76,0,0" VerticalAlignment="Top" Width="75" Name="newDI" Click="newDI_Click" />
-        <Button Content="new DO test" HorizontalAlignment="Left" Margin="440,76,0,0" VerticalAlignment="Top" Width="75" Name="newDO" Click="newDO_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height ="449*"/>
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="#87CEEB"  />
+        <Rectangle Grid.Column="0" Grid.RowSpan="3" Fill="#87CEEB"  />
+        <Rectangle Grid.Column="2" Grid.RowSpan="3" Fill="#87CEEB"  />
+        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#87CEEB"  />
+
+        <TabControl Grid.Row="1" Grid.Column="1" >
+            <TabItem Header="Analog inputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid Name="aiGrid" SelectedItem="{Binding SelectedAI}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1">
+                        <DataGrid.Columns>
+                            
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Analog outputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Digital inputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Digital outputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Alarms" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Additional feature" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
+                <Grid>
+                    <DataGrid>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
 
 
     </Grid>

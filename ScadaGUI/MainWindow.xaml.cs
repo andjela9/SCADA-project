@@ -1,4 +1,5 @@
 ﻿using DataConcentrator;
+using DataConcentrator.Tagovi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,37 +24,23 @@ namespace ScadaGUI
     {
 
         public static Handler Handler { get; set; }
+
+        public static AI SelectedAI { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void newAI_Click(object sender, RoutedEventArgs e)
-        {
-            NewAI newAI = new NewAI();
-            newAI.ShowDialog();
-        }
-
-        private void newAO_Click(object sender, RoutedEventArgs e)
-        {
-            NewAO newAO = new NewAO();
-            newAO.ShowDialog();
-        }
-
-        private void newDI_Click(object sender, RoutedEventArgs e)
-        {
-            NewDI newDI = new NewDI();
-            newDI.ShowDialog();
-        }
-
-        private void newDO_Click(object sender, RoutedEventArgs e)
-        {
-            NewDO newDO = new NewDO();
-            newDO.ShowDialog();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+            if(Handler == null)
+            {
+                Handler = new Handler();
+            }
+            Handler.LoadContext();
+            Handler.PLC.StartPLCSimulator();
+            Handler.StartAI();
+            Handler.StartDI();
+            
 
         }
 

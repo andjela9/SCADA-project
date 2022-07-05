@@ -1,0 +1,61 @@
+﻿<Window x:Class="ScadaGUI.NewAlarm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScadaGUI"
+        mc:Ignorable="d"
+        Title="New Alarm" Height="450" Width="320">
+    <Grid>
+        <!--#region  Definisanje grida-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Fill="#89CFF0"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Name="Zaglavlje" Text="Alarm INFO" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Alarm name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Message" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Limit value" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Type" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="cancel" BorderBrush="#FFFF5718"  Background="#FFFF5718" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 10" Height="40" Width="140" MouseEnter="cancel_MouseEnter" MouseLeave="cancel_MouseLeave" Click="cancel_Click">Cancel</Button >
+
+        <!--#region Druga kolona-->
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="AlarmNameTxt" Margin="15" ToolTip="Enter Alarm name" />
+        <TextBlock Name="AlarmVal" Text="*Required field" Grid.Row="1" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" Name="MessageTxt" Margin="15,24" ToolTip="Enter message" Height="80" />
+
+
+
+        <TextBlock Name="MessageVal" Text="*Required field" Grid.Row="3" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Name="LimitValueTxt" Margin="15" ToolTip="Enter limit value" />
+        <TextBlock Name="LimitValueVal" Text="*Required field" Grid.Row="4" Grid.Column="1" Margin="15, 40, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+        <RadioButton Grid.Row="5" Grid.Column="1" Name="AlarmAbove" Content="Above the limit"  VerticalAlignment="Top" Margin="15,12,0,0" />
+        <RadioButton Grid.Row="5" Grid.Column="1" Name="AlarmBelow" Content="Below the limit"  VerticalAlignment="Bottom" Margin="15,0,0,16" />
+        <TextBlock Name="TypeVal" Text="*Required field" Grid.Row="5" Grid.Column="1" Margin="15, 45, 15, 0" Foreground="Red" Visibility="Hidden"/>
+
+
+
+
+
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="confirm" BorderBrush="LawnGreen"  Background="LawnGreen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 10, 10" Height="40" Width="140" MouseEnter="confirm_MouseEnter" MouseLeave="confirm_MouseLeave" Click="confirm_Click">Confirm</Button >
+
+
+        <!--#endregion-->
+
+    </Grid>
+</Window>

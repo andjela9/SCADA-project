@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewAlarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewAO.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +91,9 @@
   <ItemGroup>
     <Compile Include="NewAI.xaml.cs">
       <DependentUpon>NewAI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewAlarm.xaml.cs">
+      <DependentUpon>NewAlarm.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewAO.xaml.cs">
       <DependentUpon>NewAO.xaml</DependentUpon>
@@ -126,6 +133,10 @@
     <ProjectReference Include="..\DataConcentrator\DataConcentrator.csproj">
       <Project>{024884F0-496F-4426-A0CE-45FF39AE24A6}</Project>
       <Name>DataConcentrator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PLCSimulator\PLCSimulator.csproj">
+      <Project>{DC33BD88-1C29-4D05-8BB6-C41323290719}</Project>
+      <Name>PLCSimulator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

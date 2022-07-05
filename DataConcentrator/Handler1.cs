@@ -1,5 +1,6 @@
 ﻿using DataConcentrator.Tagovi;
 using PLCSimulator;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading;
@@ -11,10 +12,10 @@ namespace DataConcentrator
         public Context context { get; set; }
         public PLCSimulatorManager PLC { get; set; }        
 
-        public Dictionary<AI, Thread> AIThreads;
-        public Dictionary<AO, Thread> AOThreads;
-        public Dictionary<DI, Thread> DIThreads;
-        public Dictionary<DO, Thread> DOThreads;
+        public ConcurrentDictionary<AI, Thread> AIThreads;      
+        public ConcurrentDictionary<AO, Thread> AOThreads;
+        public ConcurrentDictionary<DI, Thread> DIThreads;
+        public ConcurrentDictionary<DO, Thread> DOThreads;
 
         public Handler()
         {
@@ -24,10 +25,10 @@ namespace DataConcentrator
             }
             PLC = new PLCSimulatorManager();
 
-            AIThreads = new Dictionary<AI, Thread>();
-            AOThreads = new Dictionary<AO, Thread>();
-            DIThreads = new Dictionary<DI, Thread>();
-            DOThreads = new Dictionary<DO, Thread>();
+            AIThreads = new ConcurrentDictionary<AI, Thread>();
+            AOThreads = new ConcurrentDictionary<AO, Thread>();
+            DIThreads = new ConcurrentDictionary<DI, Thread>();
+            DOThreads = new ConcurrentDictionary<DO, Thread>();
         }
 
         public void LoadContext()       //trebace za main u skadi
@@ -69,7 +70,7 @@ namespace DataConcentrator
             {
                 //TODO: trebalo bi zakljucati ili koristiti one recnike gde je to uradjeno
                 Thread AIThread = new Thread(() => GetAIValue(ai));
-                AIThreads.Add(ai, AIThread);
+                AIThreads.TryAdd(ai, AIThread);     //vraca true ili false, mogla bih to iskoristiti za nesto
                 AIThread.Start();
             }
         }
@@ -86,13 +87,13 @@ namespace DataConcentrator
         public void AddAI(AI ai)           //mozda mi ne bude trebalo 
         {
             Thread AIThread = new Thread(() => GetAIValue(ai));     //za konkretan input napravi nit, doda u recnik, pokrene
-            AIThreads.Add(ai, AIThread);
+            AIThreads.TryAdd(ai, AIThread);
             AIThread.Start();
         }
 
 
         //DI
-        public void GetDIValue(DI di)           //mogle bi se mozda GetAIValue i GetDIValue parametrizovati tako da budu jedna metoda, tipa neki objekat al tu bi moglo puci na kastu, razmisliti na kraju
+        public void GetDIValue(DI di)           //mogle bi se mozda GetAIValue i GetDIValue parametrizovati tako da budu jedna metoda, tipa neki objekat al tako bi moglo puci na kastu, razmisliti na kraju
         {
             while (true)
             {
@@ -106,9 +107,10 @@ namespace DataConcentrator
         {
             foreach (DI di in context.DigitalInputs)          //za sve inpute doda nit, doda u recnik, pokrene
             {
-                //TODO: trebalo bi zakljucati ili koristiti one recnike gde je to uradjeno
+                //DONE: trebalo bi zakljucati ili koristiti one recnike gde je to uradjeno
+                //TODO: da li negde treba zakljucati
                 Thread DIThread = new Thread(() => GetDIValue(di));
-                DIThreads.Add(di, DIThread);
+                DIThreads.TryAdd(di, DIThread);
                 DIThread.Start();
             }
         }
@@ -124,7 +126,7 @@ namespace DataConcentrator
         public void AddDI(DI di)           //mozda mi ne bude trebalo 
         {
             Thread DIThread = new Thread(() => GetDIValue(di));     //za konkretan input napravi nit, doda u recnik, pokrene
-            DIThreads.Add(di, DIThread);
+            DIThreads.TryAdd(di, DIThread);
             DIThread.Start();
         }
     }

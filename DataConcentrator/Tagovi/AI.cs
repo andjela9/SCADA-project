@@ -64,7 +64,7 @@ namespace DataConcentrator.Tagovi
 
 
         #region Properties
-        //TODO: treba negde da dam kljuc
+        //DONE: treba negde da dam kljuc
 
         private int num;
         [Key]
@@ -87,7 +87,7 @@ namespace DataConcentrator.Tagovi
         }
         [NotMapped]
         public List<Alarm> ActiveAlarms { 
-            get { return alarms; }
+            get { return activeAlarms; }
             set
             {
                 activeAlarms = value;
