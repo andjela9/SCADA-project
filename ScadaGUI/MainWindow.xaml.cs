@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataConcentrator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace ScadaGUI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static Handler Handler { get; set; }
         public MainWindow()
         {
             InitializeComponent();

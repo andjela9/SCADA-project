@@ -122,5 +122,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataConcentrator\DataConcentrator.csproj">
+      <Project>{024884F0-496F-4426-A0CE-45FF39AE24A6}</Project>
+      <Name>DataConcentrator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
