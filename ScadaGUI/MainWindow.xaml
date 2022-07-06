@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScadaGUI"
         mc:Ignorable="d"
-        Title="S C A D A" Height="500" Width="800">
+        Title="S C A D A"  Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*" />
-            <RowDefinition Height ="449*"/>
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="0.1*" />  <!--boja-->
+            <RowDefinition Height="0.15*" />  <!--label-->
+            <RowDefinition Height="0.2*" /> <!--combobox-->
+            <RowDefinition Height ="1.5*"/> <!--datagrid-->
+            <RowDefinition Height="0.2*" />  <!--dugmad-->
+            <RowDefinition Height="0.1*" /> <!--boja-->
+            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -18,58 +22,30 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="#87CEEB"  />
-        <Rectangle Grid.Column="0" Grid.RowSpan="3" Fill="#87CEEB"  />
-        <Rectangle Grid.Column="2" Grid.RowSpan="3" Fill="#87CEEB"  />
-        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#87CEEB"  />
+        <Rectangle Grid.Column="0" Grid.RowSpan="6" Fill="#87CEEB"  />
+        <Rectangle Grid.Column="2" Grid.RowSpan="6" Fill="#87CEEB"  />
+        <Rectangle Grid.Row="5" Grid.ColumnSpan="3" Fill="#87CEEB"  />
 
-        <TabControl Grid.Row="1" Grid.Column="1" >
-            <TabItem Header="Analog inputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid Name="aiGrid" SelectedItem="{Binding SelectedAI}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1">
-                        <DataGrid.Columns>
-                            
-                        </DataGrid.Columns>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Analog outputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Digital inputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Digital outputs" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Alarms" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Additional feature" Height="22"  MinWidth="80"   FontWeight="Bold" VerticalAlignment="Center">
-                <Grid>
-                    <DataGrid>
-
-                    </DataGrid>
-                </Grid>
-            </TabItem>
-
-        </TabControl>
+        <Label Grid.Row="1" Grid.Column="1" Content="Please choose an action:" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" />
+        <ComboBox Name ="dataComboBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="200" Height="30" SelectionChanged="dataComboBoxSelectionChanged" Margin="20,0,0,0"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="Please log in:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" />
+        <Button Name="LogIn" Content="Log in" Grid.Column="1" Grid.Row="2" Width="75" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <DataGrid Name ="dataGrid" Grid.Column="1" Grid.Row="3"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*">
+            
+        </DataGrid>
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="New" HorizontalAlignment="Center" Width="75" Height="30" VerticalAlignment="Center" Name="new" Click="new_Click" Grid.Row="0" Grid.Column="0"/>
+            <Button Content="Remove" HorizontalAlignment="Center" Width="75" Height="30" VerticalAlignment="Center"  Name="remove" Click="remove_Click" Grid.Column="1"/>
+            <Button Content="History" HorizontalAlignment="Center" Width="75" Height="30" VerticalAlignment="Center"  Name="history" Click="history_Click" Grid.Column="2"/>
+            <Button Content="Addresses" HorizontalAlignment="Center" Width="75" Height="30" VerticalAlignment="Center" Name="addresses" Click="addresses_Click" Grid.Column="3"/>
+            
+        </Grid>
 
 
     </Grid>

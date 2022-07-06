@@ -40,10 +40,35 @@ namespace ScadaGUI
             Handler.PLC.StartPLCSimulator();
             Handler.StartAI();
             Handler.StartDI();
+
+            dataGrid.ItemsSource = Handler.context.AnalogInputs;
             
 
         }
 
-        
+        private void newAI_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void new_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void remove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void history_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addresses_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
